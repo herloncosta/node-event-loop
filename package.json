@@ -1,0 +1,15 @@
+{
+  "name": "event-loop",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node --watch server.js",
+    "generate:json": "node generateLargeJsonFile.js",
+    "generate:txt": "node generateLargeTxtFile.js"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
