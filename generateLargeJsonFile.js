@@ -1,5 +1,9 @@
 import fs from 'node:fs'
 
+if (!fs.existsSync('data')) {
+  fs.mkdirSync('data')
+}
+
 function createLargeObject(sizeInBytes) {
   const object = {}
   let currentSize = 0

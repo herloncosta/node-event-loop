@@ -1,5 +1,9 @@
 import fs from 'node:fs'
 
+if (!fs.existsSync('data')) {
+  fs.mkdirSync('data')
+}
+
 function generateTxtFile(filename, bytesSize) {
   const chunkSize = 1024 * 1024 // 1MB
   const numChunks = bytesSize / chunkSize
