@@ -1,10 +1,12 @@
 import http from 'node:http'
 import { Worker } from 'node:worker_threads'
+import { logger } from './logger.js'
 
 http.createServer((req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/plain; charset=utf-8' })
 
   if (req.url === '/compute') {
+    logger(req)
     const worker = new Worker('./hard-compute.js')
 
     worker.on('message', sum => {
@@ -17,6 +19,7 @@ http.createServer((req, res) => {
       res.end(`Error: ${error.message}`)
     })
   } else {
+    logger(req)
     res.end('Ok!')
   }
 
