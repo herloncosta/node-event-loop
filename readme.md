@@ -45,6 +45,8 @@ npm start
 
 Isso iniciará três servidores:
 1. Servidor principal em http://localhost:3000
+2. Servidor bloqueante em http://localhost:3001
+3. Servidor não-bloqueante em http://localhost:3002
 
 ## 🔍 Rotas Disponíveis
 
